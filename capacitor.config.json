@@ -1,0 +1,9 @@
+{
+  "appId": "ir.mojtababnh85.animecollector",
+  "appName": "کلکسیون انیمه",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "plugins": {
+    "CapacitorHttp": { "enabled": true }
+  }
+}

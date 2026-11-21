@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#fff7f9">
+  <title>کلکسیون انیمه</title>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✿</span><div><b>کلکسیون انیمه</b><small>Anime Collector</small></div></div>
+      <button id="settingsBtn" class="icon-btn" aria-label="تنظیمات">⚙</button>
+    </header>
+    <main class="container">
+      <section class="hero">
+        <span class="eyebrow">داشبورد شخصی تو</span>
+        <h1>سلام، خوش اومدی! 🌸</h1>
+        <p><strong id="count">۰</strong> انیمه در کلکسیونت داری.</p>
+        <button id="addBtn" class="primary">＋ افزودن انیمه</button>
+      </section>
+      <section class="toolbar">
+        <h2>انیمه‌های من</h2>
+        <div class="views"><button id="gridBtn" class="active">▦</button><button id="listBtn">☷</button></div>
+      </section>
+      <div id="dayFilters" class="day-filters"></div>
+      <section id="animeList" class="anime-list"></section>
+      <p id="empty" class="empty">هنوز انیمه‌ای اضافه نکردی.<br>اولین انیمه‌ات رو ثبت کن 🌷</p>
+    </main>
+    <nav class="bottom-nav"><span class="selected">⌂<small>خانه</small></span><span id="navAdd">＋<small>افزودن</small></span><span id="navSettings">⚙<small>تنظیمات</small></span></nav>
+  </div>
+
+  <dialog id="animeDialog">
+    <form id="animeForm" method="dialog">
+      <div class="dialog-head"><div><span class="eyebrow">کلکسیون ساکورا</span><h2 id="formTitle">افزودن انیمه</h2></div><button type="button" class="close" data-close>×</button></div>
+      <label>نام انیمه<input id="name" required maxlength="255" placeholder="مثلاً Black Clover"></label>
+      <div class="two">
+        <label>روز پخش<select id="weekDay" required></select></label>
+        <label>سایت پخش<select id="provider"><option value="animex">Animex</option><option value="nine anime">NineAnime</option></select></label>
+      </div>
+      <label>لینک صفحه انیمه<input id="url" type="url" required placeholder="https://..." dir="ltr"></label>
+      <label>آخرین قسمت دیده‌شده<input id="lastEpisode" type="number" min="1" value="1" required dir="ltr"></label>
+      <div class="actions"><button type="button" class="secondary" data-close>انصراف</button><button type="submit" class="primary">ذخیره</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="settingsDialog">
+    <form id="settingsForm" method="dialog">
+      <div class="dialog-head"><div><span class="eyebrow">تنظیمات خصوصی</span><h2>کوکی NineAnime</h2></div><button type="button" class="close" data-close>×</button></div>
+      <p class="hint">برای استخراج لینک از NineAnime به Cookie معتبر نیاز داری. کوکی فقط در فضای امن دستگاه ذخیره می‌شود.</p>
+      <label>Cookie<textarea id="cookie" rows="4" dir="ltr" placeholder="نام=مقدار; ..."></textarea></label>
+      <div class="actions"><button type="button" class="secondary" id="removeCookie">پاک‌کردن</button><button type="submit" class="primary">ذخیره امن</button></div>
+    </form>
+  </dialog>
+  <div id="toast" role="status"></div>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
